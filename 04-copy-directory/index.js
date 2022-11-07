@@ -11,9 +11,7 @@ function copyDirectory() {
     fs.mkdir(targetDir,{recursive: true},()=>{
       fs.readdir(sourceDir, (err, files) => {
         files.forEach(file => {
-          fs.copyFile(path.join(sourceDir,file),path.join(targetDir,file), (err)=>{
-            console.log('Find directory or some error, skip');
-            return;
+          fs.copyFile(path.join(sourceDir,file),path.join(targetDir,file), (err)=>{ return;
           });
         });
       });
